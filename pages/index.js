@@ -102,8 +102,6 @@ HomePage.getInitialProps = async () => {
   return {
     th_data: thailandData.data,
     global_data: globalStat.data,
-    // th_data: null,
-    // global_data: null,
   };
 };
 
