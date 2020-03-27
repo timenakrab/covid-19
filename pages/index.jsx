@@ -1,12 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
 
-const HomePage = props => {
+const HomePage = () => {
   return (
     <div>
       <h1>Hello COVID-19</h1>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
