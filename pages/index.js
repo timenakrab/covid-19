@@ -7,6 +7,7 @@ import { fetchStatThailand, fetchStatGlobal } from '../constant/API';
 import { tab_selected as tabSelected, thailand } from '../constant/constantWebsite';
 import { timestampToDate } from '../libs/Date';
 import { mapDataToStat } from '../libs/mapData';
+import HeadCovid from '../components/HeadCovid';
 import LocationTabs from '../components/LocationTabs';
 import BlockStat from '../components/BlockStat';
 
@@ -27,9 +28,7 @@ const HomePage = props => {
     <div className="container">
       <HeaderPage title="COVID-19" desc="รายงานผล โควิด-19 แบบรายวัน(covid-19)" url="/" />
       <div className="row">
-        <div className="col-12">
-          <h1 className="text-center">COVID-19</h1>
-        </div>
+        <HeadCovid />
       </div>
       <div className="row">
         <div className="col-12">
@@ -103,6 +102,8 @@ HomePage.getInitialProps = async () => {
   return {
     th_data: thailandData.data,
     global_data: globalStat.data,
+    // th_data: null,
+    // global_data: null,
   };
 };
 

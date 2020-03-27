@@ -4,7 +4,7 @@ export const mapDataToStat = globalData => {
     active: 0,
     recovered: 0,
     deaths: 0,
-    lastUpdate: 0,
+    lastUpdate: '2020-01-01',
   };
   if (globalData) {
     const { confirmed, recovered, deaths, lastUpdate } = globalData;

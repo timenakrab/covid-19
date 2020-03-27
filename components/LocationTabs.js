@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { thailand, global } from '../constant/constantWebsite';
@@ -10,6 +9,7 @@ const LocationTabs = ({ selectTab }) => {
       <div className="block-tab">
         <div
           role="button"
+          tabIndex={-1}
           className={`${tab === thailand ? 'tab-button-active' : 'tab-button'} pointer`}
           onClick={() => {
             setTab(thailand);
@@ -22,6 +22,7 @@ const LocationTabs = ({ selectTab }) => {
         </div>
         <div
           role="button"
+          tabIndex={-1}
           className={`${tab === global ? 'tab-button-active' : 'tab-button'} pointer`}
           onClick={() => {
             setTab(global);
