@@ -1,20 +1,4 @@
-export const mapDataThailand = thailandData => {
-  let labelData = {
-    confirmed: 0,
-    active: 0,
-    recovered: 0,
-    deaths: 0,
-  };
-  if (thailandData) {
-    labelData = {
-      ...labelData,
-      ...thailandData,
-    };
-  }
-  return labelData;
-};
-
-export const mapDataGlobal = globalData => {
+export const mapDataToStat = globalData => {
   let labelData = {
     confirmed: 0,
     active: 0,

@@ -6,7 +6,7 @@ import Theme from '../constant/Theme';
 import { fetchStatThailand, fetchStatGlobal } from '../constant/API';
 import { tab_selected as tabSelected, thailand } from '../constant/constantWebsite';
 import { timestampToDate } from '../libs/Date';
-import { mapDataThailand, mapDataGlobal } from '../libs/mapData';
+import { mapDataToStat } from '../libs/mapData';
 import LocationTabs from '../components/LocationTabs';
 import BlockStat from '../components/BlockStat';
 
@@ -16,8 +16,8 @@ const FooterPage = dynamic(import('../components/FooterPage'));
 const HomePage = props => {
   const { th_data: thailandData, global_data: globalData } = props;
   const [selectedTab, setSelected] = useState(tabSelected);
-  const mapThailandStat = mapDataThailand(thailandData);
-  const mapGlobalStat = mapDataGlobal(globalData);
+  const mapThailandStat = mapDataToStat(thailandData);
+  const mapGlobalStat = mapDataToStat(globalData);
 
   const selectTab = tabName => {
     setSelected(tabName);
@@ -101,7 +101,7 @@ HomePage.getInitialProps = async () => {
   const thailandData = await fetchStatThailand();
   const globalStat = await fetchStatGlobal();
   return {
-    th_data: thailandData.data[0],
+    th_data: thailandData.data,
     global_data: globalStat.data,
   };
 };
