@@ -1,8 +1,15 @@
 const withCSS = require('@zeit/next-css');
+const { base_url: websiteUrl } = require('./constant/constantWebsite');
 
 module.exports = withCSS({
   devIndicators: {
     autoPrerender: false,
+  },
+  serverRuntimeConfig: {
+    BASE_URL: websiteUrl,
+  },
+  publicRuntimeConfig: {
+    BASE_URL: websiteUrl,
   },
   webpack: (config, { dev }) => {
     if (dev) {
