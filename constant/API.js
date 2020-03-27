@@ -1,9 +1,16 @@
 import { ApiGet } from './CommonAPI';
-import { thailand } from './MathdroUrl';
+import { thailand, global } from './MathdroUrl';
 
-export const fetchThailandOnly = () => {
+export const fetchStatThailand = () => {
   return ApiGet({
     path: thailand,
+    params: {},
+  });
+};
+
+export const fetchStatGlobal = () => {
+  return ApiGet({
+    path: global,
     params: {},
   });
 };
