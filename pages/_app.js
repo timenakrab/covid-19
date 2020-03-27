@@ -1,13 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import App from 'next/app';
 
-const App = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
-};
+class CovidWebsite extends App {
+  static async getInitialProps({ Component, ctx }) {
+    const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
+    return { pageProps };
+  }
 
-App.propTypes = {
-  Component: PropTypes.func.isRequired,
-  pageProps: PropTypes.shape().isRequired,
-};
+  render() {
+    const { Component, pageProps } = this.props;
+    return <Component {...pageProps} />;
+  }
+}
 
-export default App;
+export default CovidWebsite;

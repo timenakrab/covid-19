@@ -15,6 +15,7 @@ export const ApiGet = ({ path, params }) => {
     headers: {
       Accept: 'application/json',
       ContentType: 'application/json',
+      origin: 'x-requested-with',
     },
     method: 'GET',
     url: `${urlWithMode()}${api}${path}`,
