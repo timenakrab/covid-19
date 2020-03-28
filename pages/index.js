@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
+import getConfig from 'next/config';
 
 import Theme from '../constant/Theme';
 import { fetchStatThailand, fetchStatGlobal } from '../constant/API';
@@ -13,6 +14,8 @@ import BlockStat from '../components/BlockStat';
 
 const HeaderPage = dynamic(import('../components/HeaderPage'));
 const FooterPage = dynamic(import('../components/FooterPage'));
+const keywords = 'รายงานผล,โควิด-19,covid-19';
+const { publicRuntimeConfig } = getConfig();
 
 const HomePage = props => {
   const { th_data: thailandData, global_data: globalData } = props;
@@ -26,7 +29,13 @@ const HomePage = props => {
 
   return (
     <div className="container">
-      <HeaderPage title="COVID-19" desc="รายงานผล โควิด-19 แบบรายวัน(covid-19)" url="/" />
+      <HeaderPage
+        title="COVID-19"
+        desc="รายงานผล โควิด-19 แบบรายวัน(covid-19)"
+        url="/"
+        keywords={keywords}
+        thumnail={`${publicRuntimeConfig.BASE_URL}/facebook-share-covid-19.jpg`}
+      />
       <div className="row">
         <HeadCovid />
       </div>

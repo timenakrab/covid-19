@@ -16,6 +16,7 @@ const PageHeadTagCustom = ({
   desc = description,
   url = urlWebsite,
   thumnail = thumnailWebsite,
+  keywords,
 }) => (
   <Head>
     <meta charSet="UTF-8" />
@@ -34,7 +35,7 @@ const PageHeadTagCustom = ({
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
     />
     <meta name="description" content={desc} />
-    <meta name="keywords" content={title} />
+    <meta name="keywords" content={keywords || title} />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -50,13 +51,14 @@ const PageHeadTagCustom = ({
     <meta property="og:site_name" content="Streetboy" />
     <meta property="og:image" content={thumnail} />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:height" content="628" />
     <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet" />
   </Head>
 );
 
 PageHeadTagCustom.defaultProps = {
   thumnail: '',
+  keywords: '',
 };
 
 PageHeadTagCustom.propTypes = {
@@ -64,6 +66,7 @@ PageHeadTagCustom.propTypes = {
   desc: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   thumnail: PropTypes.string,
+  keywords: PropTypes.string,
 };
 
 export default PageHeadTagCustom;
