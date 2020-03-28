@@ -11,6 +11,7 @@ import { mapDataToStat } from '../libs/mapData';
 import HeadCovid from '../components/HeadCovid';
 import LocationTabs from '../components/LocationTabs';
 import BlockStat from '../components/BlockStat';
+import FooterCovid from '../components/FooterCovid';
 
 const HeaderPage = dynamic(import('../components/HeaderPage'));
 const FooterPage = dynamic(import('../components/FooterPage'));
@@ -90,6 +91,7 @@ const HomePage = props => {
           </p>
         </div>
       </div>
+      <FooterCovid />
       <FooterPage />
     </div>
   );
