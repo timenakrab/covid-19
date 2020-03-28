@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
-import process from 'process';
 
 import Theme from '../constant/Theme';
 import { fetchStatThailand, fetchStatGlobal } from '../constant/API';
@@ -82,7 +81,6 @@ const HomePage = props => {
           </p>
         </div>
       </div>
-      <p hidden>mode: {process.env.NODE_ENV}</p>
       <FooterPage />
     </div>
   );

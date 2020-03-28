@@ -2,7 +2,7 @@ body {
   background-color: #f9fcff;
   min-height: 100vh;
   background-repeat: no-repeat;
-  background: url('/bg-1920x1080.jpg') no-repeat 50% fixed;
+  background: url('https://res.cloudinary.com/streetboy/image/upload/v1585391560/bg-space_tdte6z.jpg') no-repeat 50% fixed;
   background-size: cover;
 }
 
