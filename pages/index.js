@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import getConfig from 'next/config';
@@ -8,6 +8,7 @@ import { fetchStatThailand, fetchStatGlobal } from '../constant/API';
 import { tab_selected as tabSelected, thailand } from '../constant/constantWebsite';
 import { timestampToDate } from '../libs/Date';
 import { mapDataToStat } from '../libs/mapData';
+import { pageview } from '../libs/gtag';
 import HeadCovid from '../components/HeadCovid';
 import LocationTabs from '../components/LocationTabs';
 import BlockStat from '../components/BlockStat';
@@ -27,6 +28,10 @@ const HomePage = props => {
   const selectTab = tabName => {
     setSelected(tabName);
   };
+
+  useEffect(() => {
+    pageview('/');
+  }, []);
 
   return (
     <div className="container">
