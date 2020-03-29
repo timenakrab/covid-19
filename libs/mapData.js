@@ -1,3 +1,5 @@
+import { dateTimeToDate } from './Date';
+
 export const mapDataToStat = globalData => {
   let labelData = {
     confirmed: 0,
@@ -17,4 +19,27 @@ export const mapDataToStat = globalData => {
     };
   }
   return labelData;
+};
+
+export const mapDataHistory = data => {
+  const dateTime = [];
+  const value = [];
+  data.map(({ Date: day, Cases }) => {
+    dateTime.push(dateTimeToDate(day));
+    value.push(Cases);
+    return 0;
+  });
+  return {
+    day: dateTime,
+    value,
+  };
+};
+
+export const calDataHistory = data => {
+  const cal = [];
+  for (let i = 1; i < data.length; i += 1) {
+    const sum = data[i] - data[i - 1];
+    cal.push(sum);
+  }
+  return cal;
 };
