@@ -14,6 +14,10 @@ import LocationTabs from '../components/LocationTabs';
 import BlockStat from '../components/BlockStat';
 import FooterCovid from '../components/FooterCovid';
 
+import GraphConfirm from '../components/GraphConfirm';
+import GraphRecovered from '../components/GraphRecovered';
+import GraphDeaths from '../components/GraphDeaths';
+
 const HeaderPage = dynamic(import('../components/HeaderPage'));
 const FooterPage = dynamic(import('../components/FooterPage'));
 const keywords = 'รายงานผล,โควิด-19,covid-19';
@@ -96,6 +100,25 @@ const HomePage = props => {
           </p>
         </div>
       </div>
+      <div className="row mt-3 mb-2">
+        <div className="col-12">
+          <h3 className="text-center description-covid-19">
+            สถิติย้อนหลังการติดเชื้อ COVID-19 ในประเทศไทย
+          </h3>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-4">
+          <GraphConfirm />
+        </div>
+        <div className="col-md-4">
+          <GraphRecovered />
+        </div>
+        <div className="col-md-4">
+          <GraphDeaths />
+        </div>
+      </div>
+      <div style={{ marginBottom: 56 }} />
       <FooterCovid />
       <FooterPage />
     </div>
