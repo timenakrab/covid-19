@@ -282,8 +282,43 @@ body {
 }
 
 .graph-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: Kanit, sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.block-tabs-button-graph {
+  display: flex;
+}
+
+.block-tabs-button-graph .tabs-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  background-color: #dedde2;
+  margin: 0px 4px;
+  width: 80px;
+  border-radius: 8px;
+  color: #000000;
   font-size: 14px;
   line-height: 26px;
-  margin-bottom: 0px;
+}
+
+.block-tabs-button-graph .tabs-button-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  background-color: #f9345e;
+  margin: 0px 4px;
+  width: 80px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 26px;
 }

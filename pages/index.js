@@ -108,13 +108,13 @@ const HomePage = props => {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-4">
           <GraphConfirm />
         </div>
-        <div className="col-md-12">
+        <div className="col-md-4">
           <GraphRecovered />
         </div>
-        <div className="col-md-12">
+        <div className="col-md-4">
           <GraphDeaths />
         </div>
       </div>

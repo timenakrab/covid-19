@@ -13,4 +13,8 @@ module.exports = {
   tab_selected: 'thailand',
   thailand: 'thailand',
   global: 'global',
+  tabsGraph: {
+    all: 'all',
+    daily: 'daily',
+  },
 };
