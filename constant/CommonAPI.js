@@ -21,7 +21,7 @@ export const ApiGet = ({ path, params }) => {
     method: 'GET',
     url: `${urlWithMode()}${api}${path}`,
     params,
-    timeout: 5000,
+    timeout: 20000,
   });
 };
 

@@ -1,13 +1,15 @@
 import { dateTimeToDate } from './Date';
 
+export const defaultMapData = {
+  confirmed: 0,
+  active: 0,
+  recovered: 0,
+  deaths: 0,
+  lastUpdate: '2020-01-01',
+};
+
 export const mapDataToStat = globalData => {
-  let labelData = {
-    confirmed: 0,
-    active: 0,
-    recovered: 0,
-    deaths: 0,
-    lastUpdate: '2020-01-01',
-  };
+  let labelData = defaultMapData;
   if (globalData) {
     const { confirmed, recovered, deaths, lastUpdate } = globalData;
     labelData = {
