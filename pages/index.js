@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import getConfig from 'next/config';
 
 import Theme from '../constant/Theme';
 import { fetchStatThailand, fetchStatGlobal } from '../constant/API';
 import { tab_selected as tabSelected, thailand } from '../constant/constantWebsite';
 import { timestampToDate } from '../libs/Date';
-import { defaultMapData, mapDataToStat } from '../libs/mapData';
+import { mapDataToStat } from '../libs/mapData';
 import { pageview } from '../libs/gtag';
 import HeadCovid from '../components/HeadCovid';
 import LocationTabs from '../components/LocationTabs';
@@ -23,13 +23,13 @@ const FooterPage = dynamic(import('../components/FooterPage'));
 const keywords = 'รายงานผล,โควิด-19,covid-19';
 const { publicRuntimeConfig } = getConfig();
 
-const HomePage = () => {
-  // const { th_data: thailandData, global_data: globalData } = props;
+const HomePage = props => {
+  const { th_data: thailandData, global_data: globalData } = props;
   const [selectedTab, setSelected] = useState(tabSelected);
-  const [mapThailandStat, setMapThailandStat] = useState(defaultMapData);
-  // const mapThailandStat = mapDataToStat(null);
-  const [mapGlobalStat, setMapGlobalStat] = useState(defaultMapData);
-  // const mapGlobalStat = mapDataToStat(null);
+  // const [mapThailandStat, setMapThailandStat] = useState(defaultMapData);
+  const mapThailandStat = mapDataToStat(thailandData);
+  // const [mapGlobalStat, setMapGlobalStat] = useState(defaultMapData);
+  const mapGlobalStat = mapDataToStat(globalData);
 
   const selectTab = tabName => {
     setSelected(tabName);
@@ -37,12 +37,12 @@ const HomePage = () => {
 
   useEffect(() => {
     pageview('/');
-    fetchStatThailand().then(({ data }) => {
-      setMapThailandStat(mapDataToStat(data));
-    });
-    fetchStatGlobal().then(({ data }) => {
-      setMapGlobalStat(mapDataToStat(data));
-    });
+    // fetchStatThailand().then(({ data }) => {
+    //   setMapThailandStat(mapDataToStat(data));
+    // });
+    // fetchStatGlobal().then(({ data }) => {
+    //   setMapGlobalStat(mapDataToStat(data));
+    // });
   }, []);
 
   return (
@@ -139,17 +139,17 @@ HomePage.defaultProps = {
 };
 
 HomePage.propTypes = {
-  // th_data: PropTypes.shape(),
-  // global_data: PropTypes.shape(),
+  th_data: PropTypes.shape(),
+  global_data: PropTypes.shape(),
 };
 
 HomePage.getInitialProps = async () => {
-  // const thailandData = await fetchStatThailand();
-  // const globalStat = await fetchStatGlobal();
-  // return {
-  //   th_data: thailandData.data,
-  //   global_data: globalStat.data,
-  // };
+  const thailandData = await fetchStatThailand();
+  const globalStat = await fetchStatGlobal();
+  return {
+    th_data: thailandData.data,
+    global_data: globalStat.data,
+  };
 };
 
 export default HomePage;
