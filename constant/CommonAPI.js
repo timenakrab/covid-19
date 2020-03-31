@@ -1,13 +1,13 @@
 import axios from 'axios';
-import process from 'process';
+// import process from 'process';
 import { base_api as api } from './MathdroUrl';
 import { history_api as hapi } from './Covid19api';
 
 const urlWithMode = () => {
-  const mode = process.env.NODE_ENV;
-  if (mode === 'production') {
-    return '';
-  }
+  // const mode = process.env.NODE_ENV;
+  // if (mode === 'production') {
+  //   return '';
+  // }
   return 'https://cors-anywhere.herokuapp.com/';
 };
 
@@ -30,10 +30,9 @@ export const ApiGetHistory = ({ path, params }) => {
     headers: {
       Accept: 'application/json',
       ContentType: 'application/json',
-      // origin: 'x-requested-with',
     },
     method: 'GET',
-    url: `${urlWithMode()}${hapi}${path}`,
+    url: `${hapi}${path}`,
     params,
     timeout: 5000,
   });
