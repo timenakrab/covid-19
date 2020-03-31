@@ -17,4 +17,9 @@ module.exports = {
     all: 'all',
     daily: 'daily',
   },
+  filterDay: {
+    sevenDay: 7,
+    fifteenDay: 15,
+    thirtyDay: 30,
+  },
 };

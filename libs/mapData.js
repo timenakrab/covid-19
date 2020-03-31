@@ -45,3 +45,14 @@ export const calDataHistory = data => {
   }
   return cal;
 };
+
+export const filterDataByday = (day, data) => {
+  if (data) {
+    const dataLength = data.length;
+    if (dataLength <= day) {
+      return data;
+    }
+    return data.slice(dataLength - day);
+  }
+  return [];
+};

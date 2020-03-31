@@ -14,7 +14,7 @@ const ButtonTabGraph = ({ tabName, setTab }) => {
         }}
         onKeyDown={() => null}
       >
-        ทั้งหมด
+        สะสมรวม
       </div>
       <div
         role="button"
@@ -25,7 +25,7 @@ const ButtonTabGraph = ({ tabName, setTab }) => {
         }}
         onKeyDown={() => null}
       >
-        รายวัน
+        แยกตามวัน
       </div>
     </div>
   );

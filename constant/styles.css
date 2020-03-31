@@ -322,3 +322,9 @@ body {
   font-size: 14px;
   line-height: 26px;
 }
+
+.select-filter-day {
+  height: 34px;
+  font-size: 14px;
+  line-height: 24px;
+}
