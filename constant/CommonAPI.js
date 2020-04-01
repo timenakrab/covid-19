@@ -3,13 +3,13 @@ import axios from 'axios';
 import { base_api as api } from './MathdroUrl';
 import { history_api as hapi } from './Covid19api';
 
-const urlWithMode = () => {
-  // const mode = process.env.NODE_ENV;
-  // if (mode === 'production') {
-  //   return '';
-  // }
-  return 'https://cors-anywhere.herokuapp.com/';
-};
+// const urlWithMode = () => {
+//   // const mode = process.env.NODE_ENV;
+//   // if (mode === 'production') {
+//   //   return '';
+//   // }
+//   return 'https://cors-anywhere.herokuapp.com/';
+// };
 
 export const ApiGet = ({ path, params }) => {
   return axios({
@@ -19,7 +19,7 @@ export const ApiGet = ({ path, params }) => {
       origin: 'x-requested-with',
     },
     method: 'GET',
-    url: `${urlWithMode()}${api}${path}`,
+    url: `https://cors-anywhere.herokuapp.com/${api}${path}`,
     params,
     timeout: 20000,
   });
