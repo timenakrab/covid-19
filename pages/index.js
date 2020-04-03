@@ -5,7 +5,7 @@ import getConfig from 'next/config';
 
 import Theme from '../constant/Theme';
 import { thToday } from '../constant/API';
-import { timestampToDate } from '../libs/Date';
+import { ddmmyyyyTommddyyyy } from '../libs/Date';
 import { pageview } from '../libs/gtag';
 import HeadCovid from '../components/HeadCovid';
 import BlockStat from '../components/BlockStat';
@@ -97,7 +97,7 @@ const HomePage = props => {
         </div>
         <div className="col-12">
           <p className="text-right mb-2 last-update">
-            ข้อมูลล่าสุดเมื่อ: {timestampToDate(thailandData.UpdateDate)}
+            ข้อมูลล่าสุดเมื่อ: {ddmmyyyyTommddyyyy(thailandData.UpdateDate)}
           </p>
         </div>
       </div>
