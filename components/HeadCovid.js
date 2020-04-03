@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 const HeadCovid = () => {
   return (
@@ -13,13 +12,11 @@ const HeadCovid = () => {
           </div>
         </div>
       </div>
-      <h3 className="text-center description-covid-19">
-        ติดตามผู้ติดเชื้อ COVID-19 ทั้งในประเทศไทยและทั่วโลก
+      <h3 className="text-center description-covid-19 mb-3">
+        ติดตามผู้ติดเชื้อ COVID-19 ในประเทศไทย
       </h3>
     </div>
   );
 };
-
-HeadCovid.propTypes = {};
 
 export default HeadCovid;

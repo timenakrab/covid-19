@@ -31,11 +31,11 @@ const FooterCovid = () => {
       </span>
       <a
         className="link-api"
-        href="https://github.com/mathdroid/covid-19-api"
+        href="https://covid19.th-stat.com/th/api"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="./icon/api.svg" width={32} height={32} alt="api by mathdroid" />
+        <img src="./icon/api.svg" width={32} height={32} alt="api by covid19.th-stat.com" />
       </a>
     </div>
   );

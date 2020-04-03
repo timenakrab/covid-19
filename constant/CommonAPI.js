@@ -25,6 +25,18 @@ export const ApiGet = ({ path, params }) => {
   });
 };
 
+export const ApiGetTHToday = () => {
+  return axios({
+    headers: {
+      Accept: 'application/json',
+      ContentType: 'application/json',
+    },
+    method: 'GET',
+    url: `https://covid19.th-stat.com/api/open/today`,
+    timeout: 20000,
+  });
+};
+
 export const ApiGetHistory = ({ path, params }) => {
   return axios({
     headers: {
