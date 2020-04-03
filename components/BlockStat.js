@@ -12,17 +12,25 @@ const BlockStat = ({ icon, label, labelColor, value, valueColor, increaseValue }
           {label}
         </p>
         <i
-          className="badge-increase"
+          className="badge-increase d-none d-sm-none d-md-none d-xl-block d-lg-block"
           style={{
             backgroundColor: valueColor,
           }}
         >
-          {increaseValue}
+          +{increaseValue}
         </i>
       </div>
       <p className="text-center value mb-0" style={{ color: valueColor }}>
         {numeral(value).format('0,0')}
       </p>
+      <i
+        className="badge-increase d-block d-sm-block d-md-block d-xl-none d-lg-none ml-0"
+        style={{
+          backgroundColor: valueColor,
+        }}
+      >
+        +{increaseValue}
+      </i>
     </div>
   );
 };
