@@ -137,7 +137,7 @@ HomePage.propTypes = {
 HomePage.getInitialProps = async () => {
   const thailandData = await thToday();
   return {
-    th_data: thailandData.data,
+    th_data: thailandData,
   };
 };
 

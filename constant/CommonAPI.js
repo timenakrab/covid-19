@@ -1,4 +1,5 @@
 import axios from 'axios';
+import fetch from 'isomorphic-fetch';
 // import process from 'process';
 import { base_api as api } from './MathdroUrl';
 import { history_api as hapi } from './Covid19api';
@@ -26,14 +27,11 @@ export const ApiGet = ({ path, params }) => {
 };
 
 export const ApiGetTHToday = () => {
-  return axios({
-    headers: {
-      Accept: 'application/json',
-      ContentType: 'application/json',
-    },
-    method: 'GET',
-    url: `https://covid19.th-stat.com/api/open/today`,
-    timeout: 20000,
+  return fetch('https://covid19.th-stat.com/api/open/today').then(res => {
+    if (res.status >= 400) {
+      throw new Error('Bad response from server');
+    }
+    return res.json();
   });
 };
 
