@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import getConfig from 'next/config';
@@ -22,6 +22,7 @@ const { publicRuntimeConfig } = getConfig();
 
 const HomePage = props => {
   const { th_data: thailandData } = props;
+  const [today, setToday] = useState(thailandData);
 
   // const selectTab = tabName => {
   //   setSelected(tabName);
@@ -29,6 +30,9 @@ const HomePage = props => {
 
   useEffect(() => {
     pageview('/');
+    thToday().then(data => {
+      setToday(data);
+    });
     // fetchStatThailand().then(({ data }) => {
     //   setMapThailandStat(mapDataToStat(data));
     // });
@@ -60,9 +64,9 @@ const HomePage = props => {
             icon={<img className="icon-stat" src="./icon/virus.svg" alt="ติดเชื้อ covid-19" />}
             label="ติดเชื้อ"
             labelColor={Theme.colors.black}
-            value={thailandData ? thailandData.Confirmed : 0}
+            value={today ? today.Confirmed : 0}
             valueColor={Theme.colors.pink}
-            increaseValue={thailandData ? thailandData.NewConfirmed : 0}
+            increaseValue={today ? today.NewConfirmed : 0}
           />
         </div>
         <div className="col-6 col-md-3">
@@ -70,9 +74,9 @@ const HomePage = props => {
             icon={<img className="icon-stat" src="./icon/hospital.svg" alt="รักษาตัว covid-19" />}
             label="รักษาตัว"
             labelColor={Theme.colors.black}
-            value={thailandData ? thailandData.Hospitalized : 0}
+            value={today ? today.Hospitalized : 0}
             valueColor={Theme.colors.orange}
-            increaseValue={thailandData ? thailandData.NewHospitalized : 0}
+            increaseValue={today ? today.NewHospitalized : 0}
           />
         </div>
         <div className="col-6 col-md-3">
@@ -80,9 +84,9 @@ const HomePage = props => {
             icon={<img className="icon-stat" src="./icon/strong.svg" alt="หายแล้ว covid-19" />}
             label="หายแล้ว"
             labelColor={Theme.colors.black}
-            value={thailandData ? thailandData.Recovered : 0}
+            value={today ? today.Recovered : 0}
             valueColor={Theme.colors.greenLight}
-            increaseValue={thailandData ? thailandData.NewRecovered : 0}
+            increaseValue={today ? today.NewRecovered : 0}
           />
         </div>
         <div className="col-6 col-md-3">
@@ -90,14 +94,14 @@ const HomePage = props => {
             icon={<img className="icon-stat" src="./icon/death.svg" alt="เสียชีวิต covid-19" />}
             label="เสียชีวิต"
             labelColor={Theme.colors.black}
-            value={thailandData ? thailandData.Deaths : 0}
+            value={today ? today.Deaths : 0}
             valueColor={Theme.colors.purple}
-            increaseValue={thailandData ? thailandData.NewDeaths : 0}
+            increaseValue={today ? today.NewDeaths : 0}
           />
         </div>
         <div className="col-12">
           <p className="text-right mb-2 last-update">
-            ข้อมูลล่าสุดเมื่อ: {ddmmyyyyTommddyyyy(thailandData.UpdateDate)}
+            ข้อมูลล่าสุดเมื่อ: {ddmmyyyyTommddyyyy(today.UpdateDate)}
           </p>
         </div>
       </div>
