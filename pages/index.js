@@ -138,10 +138,21 @@ HomePage.propTypes = {
   th_data: PropTypes.shape(),
 };
 
-HomePage.getInitialProps = async () => {
-  const thailandData = await thToday();
+HomePage.getInitialProps = () => {
+  // const thailandData = await thToday();
+  const defaultData = {
+    Confirmed: 0,
+    Recovered: 0,
+    Hospitalized: 0,
+    Deaths: 0,
+    NewConfirmed: 0,
+    NewRecovered: 0,
+    NewHospitalized: 0,
+    NewDeaths: 0,
+    UpdateDate: '01/01/2020 00:00',
+  };
   return {
-    th_data: thailandData,
+    th_data: defaultData,
   };
 };
 

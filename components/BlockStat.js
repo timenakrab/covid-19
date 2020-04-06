@@ -17,7 +17,7 @@ const BlockStat = ({ icon, label, labelColor, value, valueColor, increaseValue }
             backgroundColor: valueColor,
           }}
         >
-          +{increaseValue}
+          +{Math.abs(increaseValue)}
         </i>
       </div>
       <p className="text-center value mb-0" style={{ color: valueColor }}>
