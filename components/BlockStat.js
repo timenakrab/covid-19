@@ -4,10 +4,6 @@ import numeral from 'numeral';
 import '../constant/styles.css';
 
 const BlockStat = ({ icon, label, labelColor, value, valueColor, increaseValue }) => {
-  const abs = number => {
-    return number < 0 ? number * -1 : number;
-  };
-
   return (
     <div className="block-stat shadow-sm mb-3">
       {icon}
@@ -21,7 +17,7 @@ const BlockStat = ({ icon, label, labelColor, value, valueColor, increaseValue }
             backgroundColor: valueColor,
           }}
         >
-          +{abs(increaseValue)}
+          +{Math.abs(increaseValue)}
         </i>
       </div>
       <p className="text-center value mb-0" style={{ color: valueColor }}>
@@ -33,7 +29,7 @@ const BlockStat = ({ icon, label, labelColor, value, valueColor, increaseValue }
           backgroundColor: valueColor,
         }}
       >
-        +{increaseValue}
+        +{Math.abs(increaseValue)}
       </i>
     </div>
   );
