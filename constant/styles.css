@@ -1,3 +1,9 @@
+.font-kanit-32 {
+  font-family: Kanit, sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+}
+
 body {
   background-color: #f9fcff;
   min-height: 100vh;
@@ -84,6 +90,24 @@ body {
     font-size: 20px;
     line-height: 28px;
   }
+
+  .last-update {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: #F9345E;
+  }
+
+  .radio-region {
+    display: flex;
+    background-color: #fff;
+    padding: 4px 8px;
+    border-radius: 16px;
+    min-width: 80px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (min-width: 321px) and (max-width: 375px) {
@@ -100,6 +124,7 @@ body {
     margin-top: 24px;
     margin-bottom: 24px;
   }
+
   .icon-stat {
     width: 36px;
     height: 36px;
@@ -131,6 +156,24 @@ body {
     font-family: Kanit, sans-serif;
     font-size: 20px;
     line-height: 28px;
+  }
+
+  .last-update {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: #F9345E;
+  }
+
+  .radio-region {
+    display: flex;
+    background-color: #fff;
+    padding: 4px 8px;
+    border-radius: 16px;
+    min-width: 80px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -181,18 +224,30 @@ body {
     font-size: 20px;
     line-height: 32px;
   }
+
+  .last-update {
+    text-align: right;
+    font-size: 14px;
+    line-height: 20px;
+    color: #F9345E;
+  }
+
+  .radio-region {
+    display: flex;
+    background-color: #fff;
+    padding: 4px 8px;
+    border-radius: 16px;
+    min-width: 100px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .icon-flag {
   width: 20px;
   height: 20px;
   margin-right: 8px;
-}
-
-.last-update {
-  font-size: 14px;
-  line-height: 20px;
-  color: #F9345E;
 }
 
 .root-tab {
@@ -336,4 +391,34 @@ body {
   font-size: 14px;
   line-height: 20px;
   margin-left: 8px;
+}
+
+.province-status {
+  display: inline-block;
+  margin: 0px 8px 8px 0px;
+  padding: 4px 12px;
+  border: 1px solid rgb(169, 169, 169);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background-color: rgb(169, 169, 169);
+  border-radius: 16px;
+  min-width: 80px;
+}
+
+.label-region {
+  font-family: Kanit, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.select-region {
+  color: #00a326;
+}
+
+.unselect-region {
+  color: #5a5a5a;
 }

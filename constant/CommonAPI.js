@@ -35,6 +35,15 @@ export const ApiGetTHToday = () => {
   });
 };
 
+export const ApiGetTHProvince = () => {
+  return fetch('https://covid19.th-stat.com/api/open/cases/sum').then(res => {
+    if (res.status >= 400) {
+      throw new Error('Bad response from server');
+    }
+    return res.json();
+  });
+};
+
 export const ApiGetHistory = ({ path, params }) => {
   return axios({
     headers: {

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { useEffect, useState } from 'react';
 import getConfig from 'next/config';
 // import PropTypes from 'prop-types';
 import { FacebookShareButton, FacebookIcon, LineShareButton, LineIcon } from 'react-share';
@@ -6,6 +6,10 @@ import { FacebookShareButton, FacebookIcon, LineShareButton, LineIcon } from 're
 const { publicRuntimeConfig } = getConfig();
 
 const FooterCovid = () => {
+  const [urlPathname, setPathname] = useState('/');
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
   return (
     <div className="footer-covid text-center">
       <span>
@@ -20,12 +24,15 @@ const FooterCovid = () => {
         </a>{' '}
       </span>
       <span className="share-line">
-        <LineShareButton style={{ marginLeft: 5 }} url={publicRuntimeConfig.BASE_URL}>
+        <LineShareButton style={{ marginLeft: 5 }} url={publicRuntimeConfig.BASE_URL + urlPathname}>
           <LineIcon size={32} round />
         </LineShareButton>
       </span>
       <span className="share-facebook">
-        <FacebookShareButton style={{ marginLeft: 5 }} url={publicRuntimeConfig.BASE_URL}>
+        <FacebookShareButton
+          style={{ marginLeft: 5 }}
+          url={publicRuntimeConfig.BASE_URL + urlPathname}
+        >
           <FacebookIcon size={32} round />
         </FacebookShareButton>
       </span>
@@ -43,4 +50,4 @@ const FooterCovid = () => {
 
 FooterCovid.propTypes = {};
 
-export default memo(FooterCovid);
+export default FooterCovid;

@@ -100,7 +100,7 @@ const HomePage = props => {
           />
         </div>
         <div className="col-12">
-          <p className="text-right mb-2 last-update">
+          <p className="mb-2 last-update">
             ข้อมูลล่าสุดเมื่อ: {ddmmyyyyTommddyyyy(today.UpdateDate)}
           </p>
         </div>

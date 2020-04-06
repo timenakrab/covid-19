@@ -1,4 +1,4 @@
-import { ApiGet, ApiGetHistory, ApiGetTHToday } from './CommonAPI';
+import { ApiGet, ApiGetHistory, ApiGetTHToday, ApiGetTHProvince } from './CommonAPI';
 import { thailand, global } from './MathdroUrl';
 import { thailand as th, confirmed, recovered, deaths } from './Covid19api';
 
@@ -18,6 +18,10 @@ export const fetchStatGlobal = () => {
 
 export const thToday = () => {
   return ApiGetTHToday();
+};
+
+export const thProvince = () => {
+  return ApiGetTHProvince();
 };
 
 export const thHistoryConfirmed = () => {
