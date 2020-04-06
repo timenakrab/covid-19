@@ -61,7 +61,7 @@ const Province = () => {
         desc="รายงานผล โควิด-19 แบบรายวัน(covid-19)"
         url="/"
         keywords={keywords}
-        thumnail={`${publicRuntimeConfig.BASE_URL}/facebook-share-covid-19.jpg`}
+        thumnail={`${publicRuntimeConfig.BASE_URL}/facebook-share-covid-19-province.jpg`}
       />
       <div className="row">
         <HeadCovid />
