@@ -15,7 +15,7 @@ const { publicRuntimeConfig } = getConfig();
 const HeaderPage = dynamic(import('../components/HeaderPage'));
 const FooterPage = dynamic(import('../components/FooterPage'));
 const FooterCovid = dynamic(import('../components/FooterCovid'));
-const keywords = 'รายงานผล,โควิด-19,covid-19';
+const keywords = 'รายงานผล,โควิด-19,covid-19,โควิดแยกแต่ละจังหวัด,โควิดในประเทศไทย';
 const defaultGender = {
   Male: 0,
   Female: 0,
@@ -58,8 +58,8 @@ const Province = () => {
     <div className="container">
       <HeaderPage
         title="COVID-19"
-        desc="รายงานผล โควิด-19 แบบรายวัน(covid-19)"
-        url="/"
+        desc="รายงานผล โควิด-19 (covid-19) แยกแต่ละจังหวัดในประเทศไทย"
+        url="/province"
         keywords={keywords}
         thumnail={`${publicRuntimeConfig.BASE_URL}/facebook-share-covid-19-province.jpg`}
       />

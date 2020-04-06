@@ -17,7 +17,7 @@ import GraphDeaths from '../components/GraphDeaths';
 
 const HeaderPage = dynamic(import('../components/HeaderPage'));
 const FooterPage = dynamic(import('../components/FooterPage'));
-const keywords = 'รายงานผล,โควิด-19,covid-19';
+const keywords = 'รายงานผล,โควิด-19,covid-19,โควิดรายวัน,โควิดในประเทศไทย';
 const { publicRuntimeConfig } = getConfig();
 
 const HomePage = props => {
@@ -45,7 +45,7 @@ const HomePage = props => {
     <div className="container">
       <HeaderPage
         title="COVID-19"
-        desc="รายงานผล โควิด-19 แบบรายวัน(covid-19)"
+        desc="รายงานผล โควิด-19 (covid-19) แบบรายวัน"
         url="/"
         keywords={keywords}
         thumnail={`${publicRuntimeConfig.BASE_URL}/facebook-share-covid-19.jpg`}
