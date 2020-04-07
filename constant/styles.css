@@ -422,3 +422,19 @@ body {
 .unselect-region {
   color: #5a5a5a;
 }
+
+#navbar-page {
+  justify-content: flex-end;
+}
+
+#navbar-page a {
+  font-family: Kanit, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #969696;
+}
+
+#navbar-page a.active {
+  color: #000000;
+  border-bottom: 2px solid #F9345E;
+}

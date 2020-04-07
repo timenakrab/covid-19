@@ -12,6 +12,7 @@ import RadioRegion from '../components/province/RadioRegion';
 import '../constant/styles.css';
 
 const { publicRuntimeConfig } = getConfig();
+const NavbarPage = dynamic(import('../components/NavbarPage'));
 const HeaderPage = dynamic(import('../components/HeaderPage'));
 const FooterPage = dynamic(import('../components/FooterPage'));
 const FooterCovid = dynamic(import('../components/FooterCovid'));
@@ -55,77 +56,80 @@ const Province = () => {
   };
 
   return (
-    <div className="container">
-      <HeaderPage
-        title="COVID-19"
-        desc="รายงานผล โควิด-19 (covid-19) แยกแต่ละจังหวัดในประเทศไทย"
-        url="/province"
-        keywords={keywords}
-        thumnail={`${publicRuntimeConfig.BASE_URL}/facebook-share-covid-19-province.jpg`}
-      />
-      <div className="row">
-        <HeadCovid />
+    <>
+      <NavbarPage activeUrl="/province" />
+      <div className="container">
+        <HeaderPage
+          title="COVID-19"
+          desc="รายงานผล โควิด-19 (covid-19) แยกแต่ละจังหวัดในประเทศไทย"
+          url="/province"
+          keywords={keywords}
+          thumnail={`${publicRuntimeConfig.BASE_URL}/facebook-share-covid-19-province.jpg`}
+        />
+        <div className="row">
+          <HeadCovid />
+        </div>
+        <div className="row">
+          <div className="col-6 col-md-4">
+            <BlockStatGender
+              icon={<img className="icon-stat" src="./icon/man.svg" alt="เพศชาย" />}
+              label="เพศชาย"
+              labelColor="#000000"
+              value={genderData.Male}
+              valueColor="#009bda"
+            />
+          </div>
+          <div className="col-6 col-md-4">
+            <BlockStatGender
+              icon={<img className="icon-stat" src="./icon/woman.svg" alt="เพศหญิง" />}
+              label="เพศหญิง"
+              labelColor="#000000"
+              value={genderData.Female}
+              valueColor="#ff6070"
+            />
+          </div>
+          <div className="offset-3 col-6 offset-md-0 col-md-4">
+            <BlockStatGender
+              icon={<img className="icon-stat" src="./icon/gender.svg" alt="ไม่ระบุเพศ" />}
+              label="ไม่ระบุเพศ"
+              labelColor="#000000"
+              value={genderData.Unknown}
+              valueColor="#6236FF"
+            />
+          </div>
+          <div className="col-12">
+            <p className="mb-2 last-update">
+              ข้อมูลล่าสุดเมื่อ: {timestampToDate(genderData.LastData)}
+            </p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <h1 className="text-center description-covid-19 mt-2 mb-3">
+              จำนวนผู้ติดเชื้อแต่ละจังหวัด
+            </h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <RadioRegion setFilterRegion={setFilterRegion} />
+          </div>
+        </div>
+        <div className="row mb-5">
+          <div className="col-12">
+            {isLoading ? (
+              <p className="text-white text-center my-2">กำลังโหลดข้อมูล</p>
+            ) : (
+              <div className="mt-4">
+                <MapProvinceData data={provinceData} filter={filterRegion} />
+              </div>
+            )}
+          </div>
+        </div>
+        <FooterCovid />
+        <FooterPage />
       </div>
-      <div className="row">
-        <div className="col-6 col-md-4">
-          <BlockStatGender
-            icon={<img className="icon-stat" src="./icon/man.svg" alt="เพศชาย" />}
-            label="เพศชาย"
-            labelColor="#000000"
-            value={genderData.Male}
-            valueColor="#009bda"
-          />
-        </div>
-        <div className="col-6 col-md-4">
-          <BlockStatGender
-            icon={<img className="icon-stat" src="./icon/woman.svg" alt="เพศหญิง" />}
-            label="เพศหญิง"
-            labelColor="#000000"
-            value={genderData.Female}
-            valueColor="#ff6070"
-          />
-        </div>
-        <div className="offset-3 col-6 offset-md-0 col-md-4">
-          <BlockStatGender
-            icon={<img className="icon-stat" src="./icon/gender.svg" alt="ไม่ระบุเพศ" />}
-            label="ไม่ระบุเพศ"
-            labelColor="#000000"
-            value={genderData.Unknown}
-            valueColor="#6236FF"
-          />
-        </div>
-        <div className="col-12">
-          <p className="mb-2 last-update">
-            ข้อมูลล่าสุดเมื่อ: {timestampToDate(genderData.LastData)}
-          </p>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-12">
-          <h1 className="text-center description-covid-19 mt-2 mb-3">
-            จำนวนผู้ติดเชื้อแต่ละจังหวัด
-          </h1>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-12">
-          <RadioRegion setFilterRegion={setFilterRegion} />
-        </div>
-      </div>
-      <div className="row mb-5">
-        <div className="col-12">
-          {isLoading ? (
-            <p className="text-white text-center my-2">กำลังโหลดข้อมูล</p>
-          ) : (
-            <div className="mt-4">
-              <MapProvinceData data={provinceData} filter={filterRegion} />
-            </div>
-          )}
-        </div>
-      </div>
-      <FooterCovid />
-      <FooterPage />
-    </div>
+    </>
   );
 };
 
