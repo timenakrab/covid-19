@@ -4,4 +4,4 @@
 3. npm run dev
 
 # Credit
-Covid API: https://github.com/mathdroid/covid-19-api
+Covid API: https://covid19.th-stat.com/th/api
