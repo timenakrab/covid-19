@@ -1,0 +1,13 @@
+{
+  "name" : "COVID-19",
+  "start_url" : "/",
+  "background_color" : "#F9345E",
+  "display" : "fullscreen",
+  "icon" : [
+    {
+      "src" : "icon-covid-website.png",
+      "sizes" : "360x360",
+      "type" : "image/jpeg"
+    }
+  ]
+}
