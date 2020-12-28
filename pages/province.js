@@ -42,10 +42,10 @@ const Province = () => {
     const provinceComp = [];
     if (data) {
       Object.entries(data).forEach(([key, value]) => {
-        if (filter === All || filter === provinceThai[key].zone) {
+        if (filter === All || filter === provinceThai[key]?.zone) {
           provinceComp.push(
             <div className="province-status" key={key}>
-              <p className="m-0 text-center">{provinceThai[key].name}</p>
+              <p className="m-0 text-center">{provinceThai[key]?.name || '-'}</p>
               <p className="m-0 text-center">{numeral(value).format('0,0')} คน</p>
             </div>,
           );
