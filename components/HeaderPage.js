@@ -24,8 +24,8 @@ const PageHeadTagCustom = ({
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
     <title>{title} | Streetboy</title>
-    <link rel="icon" href={`${publicRuntimeConfig.BASE_URL}/Logo-Streetboy.jpg`} />
-    {/* <link rel="manifest" href={`${publicRuntimeConfig.BASE_URL}/manifest.json`} /> */}
+    <link rel="icon" href={`${publicRuntimeConfig.BASE_URL}/icon-covid-website.png`} />
+    <link rel="manifest" href={`${publicRuntimeConfig.BASE_URL}/manifest.json`} />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
@@ -39,7 +39,7 @@ const PageHeadTagCustom = ({
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href={`${publicRuntimeConfig.BASE_URL}/Logo-Streetboy.jpg`}
+      href={`${publicRuntimeConfig.BASE_URL}/icon-covid-website.png`}
     />
     <meta property="fb:app_id" content="1876421945732975" />
     <meta property="og:locale" content="th_TH" />
