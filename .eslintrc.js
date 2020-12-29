@@ -16,7 +16,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'import/prefer-default-export': [0],
     'class-methods-use-this': 0,
     'jsx-a11y/label-has-for': 0,
